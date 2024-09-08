@@ -1,0 +1,33 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+
+type Props = {
+  name: string;
+  role: string;
+  image?: string;
+  imageAlt?: string;
+};
+
+const { name, role, image, imageAlt } = Astro.props;
+
+if (image && !imageAlt) {
+  throw Error('imageAlt must be defined when image is not undefined');
+}
+---
+
+<MainLayout title={name}>
+  <h1>{name}</h1>
+  <h2>{role}</h2>
+  {image ? <img class="provided-image" src={image} alt={imageAlt!} /> : null}
+  <slot />
+</MainLayout>
+
+<style>
+  .provided-image {
+    display: flex;
+    align-items: flex-start;
+    max-height: 300px;
+    width: auto;
+    object-fit: contain;
+  }
+</style>

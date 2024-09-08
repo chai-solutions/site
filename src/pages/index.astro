@@ -1,5 +1,51 @@
 ---
 import MainLayout from '@layouts/MainLayout.astro';
+
+type TeamMember = {
+  name: string;
+  role: string;
+  imageUrl: string;
+  pageUrl: string;
+};
+
+const teamMembers: Array<TeamMember> = [
+  {
+    name: 'Matt Stoffel',
+    role: 'Team Lead Engineer',
+    imageUrl: 'fawkes.jpg',
+    pageUrl: '/matt',
+  },
+  {
+    name: 'Varun Narravula',
+    role: 'Frontend Lead Engineer/DevOps Engineer',
+    imageUrl: 'water-sucks.png',
+    pageUrl: '/varun',
+  },
+  {
+    name: 'Vignesh Guruswami',
+    role: 'Backend Lead Engineer',
+    imageUrl: 'trollface.png',
+    pageUrl: '/vignesh',
+  },
+  {
+    name: 'Thamizarasu Sankara',
+    role: 'Full-Stack Engineer/Scrum Master',
+    imageUrl: 'trollface.png',
+    pageUrl: '/tamil',
+  },
+  {
+    name: 'Arjun Bhagat',
+    role: 'Frontend Engineer',
+    imageUrl: 'trollface.png',
+    pageUrl: '/arjun',
+  },
+  {
+    name: 'Robert Ace Gonzales',
+    role: 'Backend Engineer',
+    imageUrl: 'trollface.png',
+    pageUrl: '/robert',
+  },
+];
 ---
 
 <MainLayout>
@@ -62,53 +108,19 @@ import MainLayout from '@layouts/MainLayout.astro';
     <h2 class="team-title">Our Team</h2>
 
     <div class="team-grid">
-      <div class="team-card">
-        <img src="fawkes.jpg" alt="Matt Stoffel" class="team-image" />
-        <div class="team-info">
-          <h3 class="team-name">Matt Stoffel</h3>
-          <p class="team-role">Team Lead Engineer</p>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <img src="water-sucks.png" alt="Varun Narravula" class="team-image" />
-        <div class="team-info">
-          <h3 class="team-name">Varun Narravula</h3>
-          <p class="team-role">Frontend Lead Engineer/DevOps Engineer</p>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <img src="trollface.png" alt="Vignesh Guruswami" class="team-image" />
-        <div class="team-info">
-          <h3 class="team-name">Vignesh Guruswami</h3>
-          <p class="team-role">Backend Lead Engineer</p>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <img src="trollface.png" alt="Thamizarasu Sankara" class="team-image" />
-        <div class="team-info">
-          <h3 class="team-name">Thamizarasu Sankara</h3>
-          <p class="team-role">Full-Stack Engineer/Scrum Master</p>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <img src="trollface.png" alt="Arjun Bhagat" class="team-image" />
-        <div class="team-info">
-          <h3 class="team-name">Arjun Bhagat</h3>
-          <p class="team-role">Frontend Engineer</p>
-        </div>
-      </div>
-
-      <div class="team-card">
-        <img src="trollface.png" alt="Robert Ace Gonzales" class="team-image" />
-        <div class="team-info">
-          <h3 class="team-name">Robert Ace Gonzales</h3>
-          <p class="team-role">Backend Engineer</p>
-        </div>
-      </div>
+      {
+        teamMembers.map((member) => (
+          <a href={member.pageUrl}>
+            <div class="team-card">
+              <img src={member.imageUrl} alt={member.name} class="team-image" />
+              <div class="team-info">
+                <h3 class="team-name">{member.name}</h3>
+                <p class="team-role">{member.role}</p>
+              </div>
+            </div>
+          </a>
+        ))
+      }
     </div>
   </section>
 
