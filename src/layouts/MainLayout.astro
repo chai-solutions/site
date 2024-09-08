@@ -1,0 +1,39 @@
+---
+import '@styles/global.css';
+import '@fontsource/ibm-plex-sans';
+import Header from '@components/Header.astro';
+
+type Props = {
+  title?: string;
+  type?: string;
+  image?: string;
+  date?: Date;
+};
+
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? `${title} | Chai Solutions` : 'Chai Solutions'}</title>
+    <style>
+      .page-container {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        flex-grow: 1;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <Header />
+      <slot />
+    </div>
+  </body>
+</html>
