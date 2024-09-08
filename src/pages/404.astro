@@ -1,0 +1,33 @@
+---
+import MainLayout from '@layouts/MainLayout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<MainLayout title="Damn, what happened?" disableHeader>
+  <div class="page-container">
+    <h1>Damn, what happened?</h1>
+    <Icon name="mdi:grave-stone" size={88} />
+    <h2>
+      The chai was dumped in the harbor.<br />Nothing to see here.
+    </h2>
+    <p>
+      Perhaps you meant to find your way <a href="/">home</a> for a nice cup of chai
+      instead?
+    </p>
+  </div>
+</MainLayout>
+
+<style>
+  .page-container {
+    font-size: 1.5em;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  h2 {
+    text-align: center;
+  }
+</style>
