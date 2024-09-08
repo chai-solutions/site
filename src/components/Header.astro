@@ -1,0 +1,71 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<div class="panel-content-wrapper">
+  <nav class="navigation">
+    <div class="links">
+      <div class="home-button">
+        <Icon name="logo" class="chai-icon" />
+        <a href="/">CHAI SOLUTIONS</a>
+      </div>
+      <div class="other-link-box">
+        <a class="other-link" href="#about">ABOUT</a>
+        <a class="other-link" href="#about">TEAM</a>
+        <a class="other-link" href="#contact">CONTACT</a>
+      </div>
+    </div>
+    <div>
+      <a class="" href="https://github.com/chai-solutions">
+        <Icon class="github-icon" name="mdi:github" />
+      </a>
+    </div>
+  </nav>
+</div>
+
+<style>
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3em 1em 1em 1em;
+  }
+
+  .links {
+    display: flex;
+    gap: 5em;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .other-link-box {
+    display: flex;
+    gap: 2.5em;
+  }
+
+  .other-link {
+    color: #f3712588;
+    font-size: 0.9em;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .other-link:hover {
+    color: #f37125ee;
+  }
+
+  .home-button {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    gap: 0.5em;
+    font-size: 1.5em;
+  }
+
+  .github-icon {
+    font-size: 2em;
+    color: #888888;
+  }
+</style>

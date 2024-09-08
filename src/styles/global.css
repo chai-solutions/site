@@ -1,0 +1,46 @@
+html {
+  color: #c9c1c9;
+  background-color: #000000;
+  font-family: 'IBM Plex Sans', sans-serif;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+}
+
+h1 {
+  color: #f37125;
+}
+
+a {
+  color: #f37125;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* For Shiki code blocks */
+pre {
+  margin: 0.5rem 0 16px;
+  padding: 1rem 1rem 1rem;
+}
+
+.panel-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-left: 2em;
+  margin-right: 2em;
+}
