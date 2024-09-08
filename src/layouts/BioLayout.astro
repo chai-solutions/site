@@ -21,7 +21,7 @@ if (image && !imageAlt) {
     <h2>{role}</h2>
     {
       image ?
-        <img class="provided-image" src={`${image}`} alt={imageAlt!} />
+        <img src={`/${image}`} alt={imageAlt!} class="provided-image" />
       : null
     }
     <slot />
