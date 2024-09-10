@@ -6,7 +6,9 @@ import { Icon } from 'astro-icon/components';
   <nav class="navigation">
     <div class="links">
       <div class="home-button">
-        <Icon name="logo" class="chai-icon" />
+        <div class="home-button-logo">
+          <Icon name="logo" class="chai-icon" />
+        </div>
         <a href="/">CHAI SOLUTIONS</a>
       </div>
       <div class="other-link-box">
@@ -62,6 +64,10 @@ import { Icon } from 'astro-icon/components';
     font-weight: bold;
     gap: 0.5em;
     font-size: 1.5em;
+  }
+
+  .home-button-logo {
+    font-size: 2em;
   }
 
   .github-icon {
